@@ -23,6 +23,7 @@
 // --- Global Volatile Variables ---
 volatile uint16_t pulse_count = 0;
 volatile bool new_measurement_ready = false;
+volatile uint8_t timer2_overflow_count = 0; // 
 
 // --- State Machine ---
 typedef enum {
@@ -156,6 +157,9 @@ int main(void) {
 
         if (new_measurement_ready) {
             new_measurement_ready = false;
+            if (timer2_overflow_count > 10) {
+                pulse_count = 65535;
+            }
             uint16_t distance_cm = (uint32_t)pulse_count * 64 / 58;
 
             if (current_state == STATE_DRIVING_FORWARD) {
@@ -191,6 +195,7 @@ int main(void) {
 // --- ISR and Helper Functions (Unchanged) ---
 ISR(PCINT0_vect) {
     if (PINB & (1 << ECHO_PIN)) {
+        timer2_overflow_count = 0;
         TCNT2 = 0;
         TCCR2B = (1 << CS22);
     } else {
@@ -199,6 +204,11 @@ ISR(PCINT0_vect) {
         new_measurement_ready = true;
     }
 }
+
+ISR(TIMER2_OVF_vect) {
+    timer2_overflow_count++;
+}
+
 
 void trigger_ping(void) {
     PORTB |= (1 << TRIGGER_PIN);
@@ -211,6 +221,7 @@ void ultrasonic_init(void) {
     DDRB &= ~(1 << ECHO_PIN);
     PCICR |= (1 << PCIE0);
     PCMSK0 |= (1 << PCINT4);
+    TIMSK2 |= (1 << TOIE2);
 }
 
 void uart_init(void) {
