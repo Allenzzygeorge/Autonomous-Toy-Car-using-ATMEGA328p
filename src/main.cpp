@@ -14,7 +14,7 @@
 // --- System Defines ---
 #define OBSTACLE_DISTANCE_CM 80
 #define PING_INTERVAL_MS     100
-#define TURN_DURATION_MS     1500
+#define TURN_DURATION_MS     1200
 #define REVERSE_DURATION_MS  700 // Dedicated constant for reversing time
 
 // --- Robust Ultrasonic Sensor Integration ---
@@ -102,7 +102,7 @@ int main(void) {
             case STATE_INITIAL_WAIT:
                 if (current_time >= 3000) {
                     printString("Initialization complete. Starting motor.\n");
-                    motor_set_speed(80);
+                    motor_set_speed(90);
                     motor_forward();
                     current_state = STATE_DRIVING_FORWARD;
                     printString("Status: Moving Forward\n");
@@ -160,6 +160,7 @@ int main(void) {
             // MODIFIED: This state now happens AFTER reversing.
             case STATE_TURN:
                 motor_stop(); // Ensure motor is stopped before turning
+                motor_set_speed(140); // Increase motor speed for the turn
                 if (planned_turn == TURN_RIGHT) {
                     printString("Action: Steering right.\n");
                     steer_right();
@@ -187,6 +188,7 @@ int main(void) {
                 if (current_time - maneuver_start_time >= 500) {
                     printString("Maneuver complete. Resuming drive.\n");
                     steer_center();
+                    motor_set_speed(80); // Reset to normal cruising speed
                     current_state = STATE_DRIVING_FORWARD;
                     printString("Status: Moving Forward\n");
                 }
