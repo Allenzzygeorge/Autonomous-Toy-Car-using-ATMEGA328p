@@ -20,7 +20,7 @@
 #define BRAKE_DURATION_MS 100
 #define TURN_REVERSE_DURATION_MS  500
 #define TURN_FORWARD_DURATION_MS  1000
-#define CRUISE_SPEED 140
+#define CRUISE_SPEED 110
 #define TURN_SPEED 200
 
 // --- Robust Ultrasonic Sensor Integration ---
