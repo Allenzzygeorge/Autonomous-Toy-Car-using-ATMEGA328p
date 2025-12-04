@@ -2,7 +2,7 @@
 
 > Autonomous toy car project built around the ATMEGA328p — obstacle avoidance, motor control and remote programming.
 
-**Last updated:** 2025-12-04 09:00 UTC
+**Last updated:** 2025-12-04 09:42 UTC
 
 ---
 
@@ -23,7 +23,7 @@
 ## Tech Stack
 - **MCU:** ATMEGA328p (AVR)
 - **Motor driver:** L298N (or recommended alternative: TB6612 or DRV8833)
-- **Sensors:** Ultrasonic HC-SR04 / SG40 servo etc
+- **Sensors:** Ultrasonic HC-SR04 / IR line sensors / MPU (optional)
 - **Tools & Software:** avr-gcc / avrdude / PlatformIO / Arduino IDE / C / Makefile
 - **Others:** Breadboard, LiPo / battery management
 
@@ -59,7 +59,6 @@
 
 ## Screenshots / Demo
 ![demo-placeholder](docs/demo.png) <!-- replace with real screenshot path -->
-demo video : https://youtu.be/kxGvgrKxfN0
 
 ---
 
