@@ -7,9 +7,10 @@
 ---
 
 <!-- STATS -->
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=Allenzzygeorge&show_icons=true&count_private=true&theme=default)
+![GitHub stats](https://github-readme-stats-git-master-rxthxniraj.vercel.app/api?username=Allenzzygeorge&show_icons=true&count_private=true)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Allenzzygeorge&layout=compact&theme=default)
+![Top Langs](https://github-readme-stats-git-master-rxthxniraj.vercel.app/api/top-langs/?username=Allenzzygeorge&layout=compact)
+
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=Allenzzygeorge&theme=dark)
 
