@@ -7,9 +7,11 @@
 ---
 
 <!-- STATS -->
-{{GITHUB_STATS}}
+## GitHub Stats
+![GitHub stats](https://github-readme-stats-git-master-rxthxniraj.vercel.app/api?username=Allenzzygeorge&show_icons=true&count_private=true)
 
-{{TOP_LANGS}}
+![Top Langs](https://github-readme-stats-git-master-rxthxniraj.vercel.app/api/top-langs/?username=Allenzzygeorge&layout=compact)
+
 
 {{STREAK}}
 
