@@ -2,7 +2,7 @@
 
 > Autonomous toy car project built around the ATMEGA328p — obstacle avoidance, motor control and remote programming.
 
-**Last updated:** 2026-04-17 05:30 UTC
+**Last updated:** 2026-04-18 05:10 UTC
 
 ---
 
